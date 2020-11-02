@@ -10,9 +10,9 @@ public class MemberDao {
 
 	public MemberDao() {
 		members = new ArrayList<>();
-//		Article a1 = new Article(1, "¾È³çÇÏ¼¼¿ä1", "³»¿ë1", "ÀÍ¸í1", getCurrentDate());
-//		Article a2 = new Article(2, "¹Ý°©½À´Ï´Ù2", "³»¿ë2", "ÀÍ¸í2", getCurrentDate());
-//		Article a3 = new Article(3, "¾È³ç3", "³»¿ë3", "ÀÍ¸í3", getCurrentDate());
+//		Article a1 = new Article(1, "ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½1", "ï¿½ï¿½ï¿½ï¿½1", "ï¿½Í¸ï¿½1", getCurrentDate());
+//		Article a2 = new Article(2, "ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ï´ï¿½2", "ï¿½ï¿½ï¿½ï¿½2", "ï¿½Í¸ï¿½2", getCurrentDate());
+//		Article a3 = new Article(3, "ï¿½È³ï¿½3", "ï¿½ï¿½ï¿½ï¿½3", "ï¿½Í¸ï¿½3", getCurrentDate());
 //
 //		members.add(a1);
 //		articles.add(a2);
@@ -26,6 +26,20 @@ public class MemberDao {
 
 		members.add(m);
 	}
+
+	public Member getMemberByLoginIdAndLoginPw(String id, String pw) {
+
+		for (int i = 0; i < members.size(); i++) {
+			Member m = members.get(i);
+			if (m.getLoginId().equals(id) && m.getLoginPw().equals(pw)) {
+				return m;
+			}
+		}
+
+		return null;
+
+	}
+
 	public static String getCurrentDate() {
 		SimpleDateFormat format1 = new SimpleDateFormat("yyyy.MM.dd");
 		Date time = new Date();
