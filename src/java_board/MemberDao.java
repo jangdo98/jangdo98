@@ -39,7 +39,8 @@ public class MemberDao {
 		return null;
 
 	}
-
+	
+	
 	public static String getCurrentDate() {
 		SimpleDateFormat format1 = new SimpleDateFormat("yyyy.MM.dd");
 		Date time = new Date();
